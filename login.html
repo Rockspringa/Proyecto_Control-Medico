@@ -1,4 +1,5 @@
 <!DOCTYPE html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -6,9 +7,27 @@
     <title>Login</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-    
-    
+    <div id="login" class="center">
+        <h1 class="title text-white">Inicio de Sesion</h1>
+        <form class="col-1">
+            <div class="row">
+                <input type="text" name="nombre" id="nombre">
+                <label for="nombre" class="animated-up">Nombre</label>
+            </div>
+
+            <div class="row">
+                <input type="password" name="contraseña" id="contraseña">
+                <label for="contraseña" class="animated-up">Contraseña</label>
+            </div>
+
+            <input type="button" id="login-btn" class="btn" value="Iniciar Sesion">
+            <input type="button" id="sign-up-btn" class="btn" value="Registrarse">
+        </form>
+    </div>
+
     <script src="./js/script.js"></script>
 </body>
+
 </html>
