@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Inicio de Sesion</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
     <div id="login" class="center">
-        <h1 class="title text-white">Inicio de Sesion</h1>
-        <form class="col-1">
+        <h1 class="title text-celeste">Inicio de Sesion</h1>
+
+        <hr>
+
+        <form class="col">
             <div class="row">
-                <input type="text" name="nombre" id="nombre">
-                <label for="nombre" class="animated-up">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
+                <label for="nombre" class="animated-up required">Nombre</label>
             </div>
 
             <div class="row">
-                <input type="password" name="contraseña" id="contraseña">
-                <label for="contraseña" class="animated-up">Contraseña</label>
+                <input type="password" name="contraseña" id="contraseña" required>
+                <label for="contraseña" class="animated-up required">Contraseña</label>
             </div>
 
-            <input type="button" id="login-btn" class="btn" value="Iniciar Sesion">
-            <input type="button" id="sign-up-btn" class="btn" value="Registrarse">
+            <hr>
+
+            <input type="button" id="login-btn" class="btn primary-btn print" value="Iniciar Sesion">
+            <a href="./html/sign-up.html" id="sign-up-btn" class="btn secondary-btn">Registrarse</a>
         </form>
     </div>
 

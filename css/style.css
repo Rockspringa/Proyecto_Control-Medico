@@ -2,6 +2,31 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Roboto+Slab&display=swap");
 body {
   font-family: "JetBrains Mono", sans-serif;
+  background-color: #d5f2ee;
+}
+
+hr {
+  width: 80%;
+  height: 0;
+  border: 1px solid #d5f2ee;
+}
+
+#login, #sign-up {
+  height: fit-content;
+  background: #104080;
+  border-radius: 20px;
+}
+
+#login {
+  width: 40vw;
+  max-width: 450px;
+  min-width: 350px;
+}
+
+#sign-up {
+  width: 80vw;
+  max-width: 900px;
+  min-width: 350px;
 }
 
 .title {
@@ -11,17 +36,8 @@ body {
   letter-spacing: 3px;
 }
 
-.text-white {
-  color: white;
-}
-
-#login {
-  width: 40vw;
-  height: fit-content;
-  max-width: 450px;
-  min-width: 350px;
-  background: #104080;
-  border-radius: 5%;
+.text-celeste {
+  color: #d5f2ee;
 }
 
 div.center {
@@ -31,55 +47,88 @@ div.center {
   top: 50%;
 }
 
-form.col-1 {
+.double-col {
   flex: 1 1 0;
-  width: 80%;
+  width: 100%;
   height: fit-content;
   display: flex;
-  padding: 10px 10%;
+  padding: 0 15px;
+  box-sizing: border-box;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (max-width: 767px) {
+  .double-col {
+    flex-direction: column;
+  }
+}
+
+.col {
+  flex: 1 1 0;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  padding: 10px 25px;
+  box-sizing: border-box;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
-form.col-1 > .btn {
+.col.fill {
+  width: 100%;
+  padding: 0;
+}
+.col > a.btn {
+  text-decoration: none;
+}
+.col > .btn {
   width: fit-content;
   margin: 5px auto;
   border: 0;
   display: block;
+  font-size: 14px;
+  background: #d5f2ee;
   font-weight: bold;
   font-family: "JetBrains Mono", sans-serif;
   border-radius: 20px;
   letter-spacing: 2px;
 }
-form.col-1 > .btn:hover {
+.col > .btn:hover {
   text-decoration: underline;
 }
-form.col-1 > .btn#login-btn {
-  padding: 10px 20px;
+.col > .btn.primary-btn {
   color: #104080;
+  padding: 10px 20px;
 }
-form.col-1 > .btn#login-btn:active {
+.col > .btn.primary-btn:active {
   color: white;
-  border: 2px solid white;
+  border: 2px solid #d5f2ee;
   padding: 8px 18px;
   background: #104080;
 }
-form.col-1 > .btn#sign-up-btn {
-  color: white;
+.col > .btn.primary-btn:hover:not(:active) {
+  background: white;
+}
+.col > .btn.secondary-btn {
+  color: #d5f2ee;
   padding: 5px 15px;
   background: #104080;
 }
-form.col-1 > .btn#sign-up-btn:active {
+.col > .btn.secondary-btn:active {
   color: #104080;
   background: white;
 }
-form.col-1 > .row {
+.col > .btn.secondary-btn:hover:not(:active) {
+  color: white;
+}
+.col > .row {
   width: 100%;
-  height: 2.5em;
+  height: 2.3em;
   position: relative;
   margin: 10% 0 4%;
 }
-form.col-1 > .row > label, form.col-1 > .row > .animated-up {
+.col > .row > label, .col > .row > .animated-up {
   left: 10%;
   height: 100%;
   display: flex;
@@ -87,34 +136,58 @@ form.col-1 > .row > label, form.col-1 > .row > .animated-up {
   transform: translateY(-50%);
   align-items: center;
 }
-form.col-1 > .row > label:not(.animated-up) {
+.col > .row > label.required::after, .col > .row > .animated-up.required::after {
+  left: 10px;
+  color: red;
+  content: "*";
+  position: relative;
+}
+.col > .row > label:not(.animated-up) {
   top: -40%;
   color: white;
 }
-form.col-1 > .row > .animated-up {
+.col > .row > .animated-up {
   top: 50%;
   color: dimgray;
 }
-form.col-1 > .row > input:not(.btn) {
+.col > .row > input:not(.btn) {
   width: 100%;
   border: 0;
   height: 100%;
   padding: 0 2em;
   border-radius: 20px;
 }
-form.col-1 > .row > input:not(.btn):hover {
+.col > .row > input:not(.btn):hover {
   background: lightgray;
 }
-form.col-1 > .row > input:not(.btn):focus {
+.col > .row > input:not(.btn):focus {
   background: lightgray;
 }
-form.col-1 > .row > input:not(.btn):focus + .animated-up {
-  top: -40%;
+.col > .row > input:not(.btn):focus + .animated-up {
+  top: -50%;
   color: white;
   border: 0;
-  animation: move-label 0.5s ease-in-out;
+  animation: move-label 0.35s ease-in-out;
 }
 
+input.rotate:not(:focus) {
+  animation: rotation 0.1s linear 0s 3;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(1deg);
+  }
+  75% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @keyframes move-label {
   0% {
     color: dimgray;
@@ -122,6 +195,8 @@ form.col-1 > .row > input:not(.btn):focus + .animated-up {
   }
   100% {
     color: white;
-    top: -40%;
+    top: -50%;
   }
 }
+
+/*# sourceMappingURL=style.css.map */
