@@ -3,17 +3,18 @@
 body {
   position: relative;
   font-family: "JetBrains Mono", sans-serif;
-  background-size: 200px 200px;
+  background-size: 210px 200px;
   background-image: url("./../images/background.png");
+  background-color: #76dbe4;
 }
 
 hr {
   width: 80%;
   height: 0;
-  border: 1px solid #d5f2ee;
+  border: 1px solid #76dbe4;
 }
 
-#login, #sign-up, #ingreso {
+.card {
   height: fit-content;
   background: #104080;
   border-radius: 20px;
@@ -39,7 +40,7 @@ hr {
 }
 
 .text-celeste {
-  color: #d5f2ee;
+  color: #76dbe4;
 }
 
 div.center {
@@ -90,7 +91,7 @@ div.center {
   border: 0;
   display: block;
   font-size: 14px;
-  background: #d5f2ee;
+  background: #76dbe4;
   font-weight: bold;
   font-family: "JetBrains Mono", sans-serif;
   border-radius: 20px;
@@ -105,7 +106,7 @@ div.center {
 }
 .col > .btn.primary-btn:active {
   color: white;
-  border: 2px solid #d5f2ee;
+  border: 2px solid #76dbe4;
   padding: 8px 18px;
   background: #104080;
 }
@@ -113,7 +114,7 @@ div.center {
   background: white;
 }
 .col > .btn.secondary-btn {
-  color: #d5f2ee;
+  color: #76dbe4;
   padding: 5px 15px;
   background: #104080;
 }
