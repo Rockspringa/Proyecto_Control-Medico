@@ -57,12 +57,17 @@ if (printBtn) {
         const correo = correoInput.value;
         const repeat = repeatInput.value;
 
-        console.log({
-          nombre,
-          contraseña,
-          correo,
-          "verificacion correo": repeat,
-        });
+        if (contraseña === repeat)
+          console.log({
+            nombre,
+            contraseña,
+            correo,
+            "verificacion contraseña": repeat,
+          });
+        else {
+          repeatInput.value = "";
+          alert("las contraseñas no coinciden, vuelva a intentarlo.");
+        }
       } else {
         console.log({ nombre, contraseña });
       }
